@@ -1,0 +1,209 @@
+.Main-1
+{
+    background-color: gray;
+}
+.Main-2
+{
+    margin-left: 70px;
+    margin-right: 82px;
+}
+.socialmedia{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+.headerpart_one
+{
+    background-color: orange;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    gap:50px;
+    color:white;
+    width: 90%;
+    margin-left: 70px;
+}
+.contact,.formpart
+{
+    display: flex;
+}
+.Delivery
+{
+    display: flex;
+    margin-left: 350px;
+}
+.headerpart_two
+{
+    background-color: white;
+    height: 90px;
+    display: flex;
+    gap: 100px;
+}
+.searchpoint
+{
+    height: 35px;
+    width: 100px;
+    border: 2px solid orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+   
+}
+
+.cart
+{
+    height: 33px;
+    width: 100px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    
+}
+.headerpart_two-2
+{
+    display: flex;
+    gap:10px;
+    position: absolute;
+    left: 600px;
+    top: 120px;
+}
+.headerpart_two-3
+{
+height: 100px;
+background-color: white;
+display: flex;
+}
+.menu
+{
+    height: 50px;
+    width: 250px;
+    background-color: orange;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.headinks
+{
+    position: absolute;
+    top:220px;
+    left: 400px;
+}
+.headinks > a
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;   
+}
+.Dairyproducts
+{
+/* background-color: aqua; */
+height: 1000px;
+margin-top: -50px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-content: center;
+gap: 20px;
+}
+.Milk,.cheese,.buttermilk,.butter,.panner,.tofu,.shrikhand,.yoghurt
+{
+   width: 250px;
+   height: 280px;
+   border: 2px solid gray;
+   padding: 23px;
+   line-height: 0.3;
+   border-radius: 10px;
+  
+} 
+.sweets
+{
+height: 500px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-content:center ;
+gap: 20px;
+}
+.barfi,.gulabjamun,.soanpapdi,.rasgulla,.chamcham,.rasmalai,.modak,.jalebi
+{
+   width: 250px;
+   height: 280px;
+   border: -1px solid gray;
+   padding: 23px;
+   line-height: 0.3;
+   border-radius: 10px;
+  
+} 
+.Products
+{
+    height: 500px;
+    display: flex;
+    gap:20px;
+    justify-content: center;
+}
+.creamcheeseimg,.soanpapdiimg
+{
+    width: 180px;
+   height: 140px;
+   border: 2px solid gray;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   line-height: 0.3;
+   border-radius: 10px;
+}
+.amulpannerfresh200gmimg,.sugarfreegulabjamunimg,.amulpannerfresh200gmimg,.dryfruitsbarfiimg,.chitaleshrikhand500gmimg,.aboutusimageimg
+{
+    width: 180px;
+    height: 160px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    line-height: 0.2;
+}
+.Add
+{
+    height: 33px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    color: white;
+}
+.about
+{
+    margin-top: -200px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.gallery
+{
+    display: flex;
+    gap:30px;
+    justify-content: center;
+    
+}
+.contactus
+{
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 150px;
+}
+.forms{
+margin-top: -100px;
+}
