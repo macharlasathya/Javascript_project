@@ -1,0 +1,49 @@
+.name,.email,.pswd
+        {
+        display: flex;
+        }
+        .facebook
+        {
+            border: 2px solid wheat;
+            height: 35px;
+            width: 200px;
+            background-color: blue;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            margin-left: 50px;
+        }
+        .Twitter
+        {
+            border: 2px solid wheat;
+            height: 35px;
+            width: 200px;
+            background-color: lightskyblue;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            margin-left: 50px;
+        }
+       
+       .startingpage      
+       {
+        display: flex;
+        gap: 10px;
+        margin-left: 410px;
+        margin-top: 150px;
+        }
+        #headings
+        {
+            background-color: white;
+            height: 370px;
+        }
+    body{
+        background-color: gray;
+    }
+   
