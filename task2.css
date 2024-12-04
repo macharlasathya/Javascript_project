@@ -11,6 +11,7 @@
     display: flex;
     gap: 10px;
     margin-left: 10px;
+   
 }
 .headerpart_one
 {
@@ -41,7 +42,7 @@
 }
 .searchpoint
 {
-    height: 35px;
+    height: 32px;
     width: 100px;
     border: 2px solid orange;
     display: flex;
@@ -77,7 +78,7 @@ height: 100px;
 background-color: white;
 display: flex;
 }
-.menu
+/* .menu
 {
     height: 50px;
     width: 250px;
@@ -89,7 +90,45 @@ display: flex;
     color: white;
     margin-left: 40px;
     margin-top: 40px;
+} */
+
+.menu {
+    height: 50px;
+    width: 250px;
+    background-color: orange;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-left: 40px;
+    margin-top: 40px;
+    cursor: pointer;
 }
+
+.submenu {
+    display: none;  /* Initially hidden */
+    margin-left: 40px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.submenu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.submenu ul li {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #e2e2e2;
+}
+
+.submenu ul li:hover {
+    background-color: #ddd;
+}
+
 .headinks
 {
     position: absolute;
@@ -106,31 +145,67 @@ display: flex;
 {
 /* background-color: aqua; */
 height: 1000px;
-margin-top: -50px;
+margin-top: -140px;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 align-content: center;
 gap: 20px;
 }
+.AddDairy
+{
+    height: 33px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    color: white;
+    margin-left: 70px;
+}
 .Milk,.cheese,.buttermilk,.butter,.panner,.tofu,.shrikhand,.yoghurt
 {
    width: 250px;
-   height: 280px;
+   height: 330px;
    border: 2px solid gray;
    padding: 23px;
    line-height: 0.3;
    border-radius: 10px;
   
 } 
-.sweets
-{
-height: 500px;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-content:center ;
-gap: 20px;
+.sweetshead {
+    display: flex;
+    flex-direction: column;
+    margin-top: -150px;
+}
+.sweets {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+.sweets > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Addproduct{
+    height: 33px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    /* margin-left: 50px; */
 }
 .barfi,.gulabjamun,.soanpapdi,.rasgulla,.chamcham,.rasmalai,.modak,.jalebi
 {
@@ -142,6 +217,8 @@ gap: 20px;
    border-radius: 10px;
   
 } 
+
+
 .Products
 {
     height: 500px;
@@ -149,6 +226,7 @@ gap: 20px;
     gap:20px;
     justify-content: center;
 }
+
 .creamcheeseimg,.soanpapdiimg
 {
     width: 180px;
