@@ -47,6 +47,7 @@ input[type="number"] {
   border: 2px solid;
   border-radius: 20px;
   box-shadow: 2px solid wheat;
+  color: white;
 }
 .name,.Expiration
 {
