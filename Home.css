@@ -78,20 +78,6 @@ height: 100px;
 background-color: white;
 display: flex;
 }
-/* .menu
-{
-    height: 50px;
-    width: 250px;
-    background-color: orange;
-    border: 1px solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-left: 40px;
-    margin-top: 40px;
-} */
-
 .menu {
     height: 50px;
     width: 250px;
@@ -141,59 +127,8 @@ display: flex;
     font-size: 20px;
     color: #000;   
 }
-.Dairyproducts
-{
-/* background-color: aqua; */
-height: 1000px;
-margin-top: -140px;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-content: center;
-gap: 20px;
-}
-.AddDairy
-{
-    height: 33px;
-    width: 100px;
-    border: 1px solid;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: orange;
-    color: white;
-    margin-left: 70px;
-}
-.Milk,.cheese,.buttermilk,.butter,.panner,.tofu,.shrikhand,.yoghurt
-{
-   width: 250px;
-   height: 330px;
-   border: 2px solid gray;
-   padding: 23px;
-   line-height: 0.3;
-   border-radius: 10px;
-  
-} 
-.sweetshead {
-    display: flex;
-    flex-direction: column;
-    margin-top: -150px;
-}
-.sweets {
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
-}
-.sweets > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.Addproduct{
+
+/* .Addproduct{
     height: 33px;
     width: 100px;
     border: 1px solid;
@@ -206,7 +141,7 @@ gap: 20px;
     padding: 1px;
     text-decoration: none;
     /* margin-left: 50px; */
-}
+ */
 .barfi,.gulabjamun,.soanpapdi,.rasgulla,.chamcham,.rasmalai,.modak,.jalebi
 {
    width: 250px;
@@ -245,7 +180,8 @@ gap: 20px;
     border-radius: 10px;
     line-height: 0.2;
 }
-.Add
+
+.Add,.Add1,.Adds
 {
     height: 33px;
     width: 100px;
@@ -284,4 +220,36 @@ gap: 20px;
 }
 .forms{
 margin-top: -100px;
+}
+
+#Dairyproducts,#Sweets
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    justify-content: center;
+}
+.items
+{
+    border:1px solid blueviolet;
+    padding:18px;
+    border-radius: 20px;
+}
+
+.items1
+{
+    padding:15px;
+    border-radius: 20px; 
+}
+#Products
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    justify-content: center;
+}
+.items2
+{
+    border:1px solid blueviolet;
+    padding:10px;
 }
