@@ -1,100 +1,11 @@
-body{
-  background-color: gray;
-}
-.milk {
-  border: 1px solid;
-  border-radius: 10px;
-  margin-left: 10px;
-}
-
-h5 {
-  margin-bottom: 5px;
-  /* Adjust the gap here */
-}
-
-p {
-  margin-top: 5px;
-  /* Optional if you need additional control */
-}
-
-input[type="number"] {
-  text-align: center;
-  width: 50px;
-  margin-left: 10px;
-  border: none;
-}
-
-.leftside
+ .AllCards
 {
-  display: flex;
-  flex-direction: column;
-
+  
+    border: 2px solid aqua;
+    padding: 15px;
+    display:inline-block;
 }
-.MainAddcart
+.remove
 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:30px;
-}
-
-
-.Addcart1,.Addcart2,.Addcart3{
-
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  border: 2px solid;
-  border-radius: 20px;
-  box-shadow: 2px solid wheat;
-  color: white;
-}
-.name,.Expiration
-{
-  margin-left: 20px;
-  border: none;
-}
-.Allimages
-{
-  display: flex;
-  justify-content: space-around;
-
-}
-
-.rightside
-{
-  width: 330px;
-  height: 560px;
-  border: 2px solid white;
-  background-color: blueviolet;
-  border-radius: 15px;
-
-}
-.details
-{
-display: flex;
-gap:190px
-}
-.Expiration
-{
-  display: flex;
-gap: 10px;
-}
-.ckeckout
-{
-  display: flex;
-  gap: 150px;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  border: 1px solid;
-  margin: 5px;
-  border-radius: 10px;
-  background-color: aqua;
-  color: white;
-}
-.subtotal,.Shipping,.Total
-{
-  margin: 10px;
-  color: white;
+  background-color: brown;
 }

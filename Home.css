@@ -78,7 +78,7 @@ height: 100px;
 background-color: white;
 display: flex;
 }
-.menu {
+ .menu {
     height: 50px;
     width: 250px;
     background-color: orange;
@@ -113,7 +113,7 @@ display: flex;
 
 .submenu ul li:hover {
     background-color: #ddd;
-}
+} 
 
 .headinks
 {
@@ -128,33 +128,7 @@ display: flex;
     color: #000;   
 }
 
-/* .Addproduct{
-    height: 33px;
-    width: 100px;
-    border: 1px solid;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: orange;
-    color: white;
-    padding: 1px;
-    text-decoration: none;
-    /* margin-left: 50px; */
- */
-.barfi,.gulabjamun,.soanpapdi,.rasgulla,.chamcham,.rasmalai,.modak,.jalebi
-{
-   width: 250px;
-   height: 280px;
-   border: -1px solid gray;
-   padding: 23px;
-   line-height: 0.3;
-   border-radius: 10px;
-  
-} 
-
-
-.Products
+ .Products
 {
     height: 500px;
     display: flex;
@@ -162,26 +136,7 @@ display: flex;
     justify-content: center;
 }
 
-.creamcheeseimg,.soanpapdiimg
-{
-    width: 180px;
-   height: 140px;
-   border: 2px solid gray;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   line-height: 0.3;
-   border-radius: 10px;
-}
-.amulpannerfresh200gmimg,.sugarfreegulabjamunimg,.amulpannerfresh200gmimg,.dryfruitsbarfiimg,.chitaleshrikhand500gmimg,.aboutusimageimg
-{
-    width: 180px;
-    height: 160px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    line-height: 0.2;
-}
-
-.Add,.Add1,.Adds
+.Adds
 {
     height: 33px;
     width: 100px;
@@ -222,34 +177,21 @@ display: flex;
 margin-top: -100px;
 }
 
-#Dairyproducts,#Sweets
+#dairy
 {
     display: flex;
     flex-wrap: wrap;
-    gap:30px;
+    gap:35px;
     justify-content: center;
+    align-items: center;
 }
-.items
+.CARDS
 {
-    border:1px solid blueviolet;
-    padding:18px;
-    border-radius: 20px;
-}
+    border: 2px solid aqua;
+    padding: 15px;
 
-.items1
-{
-    padding:15px;
-    border-radius: 20px; 
 }
-#Products
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap:30px;
-    justify-content: center;
-}
-.items2
-{
-    border:1px solid blueviolet;
-    padding:10px;
-}
+.dairyProduct1,.sweetshead,.PRODUCTS,#ABOUTUS:hover,#gallery:hover,#more:hover
+  {
+    cursor: pointer;
+  }
