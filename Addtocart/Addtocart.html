@@ -69,7 +69,6 @@
 
 </html> -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +82,7 @@
 <body>
     <div class="header">
         <h2>Shopping Cart</h2>
-        <div id="totalPrice">Total Price: $<span id="totalPriceValue">0.00</span></div>
+        <div id="totalPrice">Total Price: ₹<span id="totalPriceValue">0.00</span></div>
     </div>
     <div id="cardContainer"></div>
 
@@ -96,9 +95,9 @@
         function calculateTotal() {
             total = 0;
             cartItems.forEach(item => {
-                total += parseFloat(item.price.replace('$', '')); // Remove dollar sign before calculating
+                total += parseFloat(item.price.replace('₹', '')); 
             });
-            totalPriceValue.textContent = '$' + total.toFixed(2); // Add dollar sign back
+            totalPriceValue.textContent = total.toFixed(2); 
         }
 
         function displayCart() {
@@ -138,3 +137,6 @@
 </body>
 
 </html>
+   
+        
+

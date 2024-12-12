@@ -107,7 +107,7 @@ loginBtn.addEventListener('submit', () => {
     if (nameStorage == inputUserName && pswdStorage == inputUserPswd) {
         alert("login done successfully !!!!!!!!!")
        setTimeout(()=>{
-        window.location.href="taks1.html"
+        window.location.href="./Home.js"
        },1000)
     }else{
         alert("oops invalid crdentials")
