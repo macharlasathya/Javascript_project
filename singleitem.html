@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Buy
+        {
+            border: 2px solid aqua;
+        }
+        .BuyCard
+        {
+            border: 2px solid aquamarine;
+            display: inline-block;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+         const singleproduct=JSON.parse(localStorage.getItem("singleproduct"))
+           console.log(singleproduct)
+             let singlecard=document.createElement("div")
+        singlecard.className="card"
+        singlecard.innerHTML=`
+        <div class="BuyCard">
+         <img src="${singleproduct.image}" alt="${singleproduct.id}" width="260">
+         <h2>${singleproduct.category}</h2>
+         <h3>${singleproduct.price}</h3>
+         <button id="Buy">Buy Now</button>
+        </div>`
+         document.body.appendChild(singlecard)
+
+
+    //     singlecard.querySelector("#Buy").addEventListener("click", (e) => {
+    //     e.stopImmediatePropagation(); // Prevent other click event listeners from firing
+    //     const singleItem = JSON.parse(localStorage.getItem("singleItem")) || []; // Retrieve cart items from localStorage
+    //     singleItem.push(singleproduct); // Add new item to the cart
+    //     localStorage.setItem("OneItems", JSON.stringify(singleItem)); 
+    //     alert(" Your Item is  added to cart!");
+    // });
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
