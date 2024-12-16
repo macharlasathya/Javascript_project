@@ -28,13 +28,14 @@
          <img src="${singleproduct.image}" alt="${singleproduct.id}" width="260">
          <h2>${singleproduct.category}</h2>
          <h3>${singleproduct.price}</h3>
-         <button id="Buy">Continue  Shoping</button>
+         <button class="Buy">Continue  Shoping</button>
         </div>`
          document.body.appendChild(singlecard)
 
-         singlecard.querySelector("#Buy").addEventListener("click",()=>
+
+         singlecard.querySelector(".Buy").addEventListener("click",()=>
         {
-            window.location.href = "../Home/Home.html";
+            window.location.href = "file:///D:/VS%20Code/js/Js%20project/Home/Home.html";
             
         })
 
