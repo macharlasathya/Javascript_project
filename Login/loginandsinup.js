@@ -190,12 +190,13 @@ sing.onclick = function () {
                 <div class="pswd">
                     <span style="border: 1px solid yellow; background-color: yellow; padding: 10px;">Password</span>
                     <input type="password" placeholder="........" style="height: 35px; width: 230px; border-color: yellow;" id="userPswd">
-                </div>
+                </div><br>
+                
                 <button id="lastsingup" style="height: 35px; width: 320px; background-color: yellow; display: flex; align-items: center; justify-content: center; color: white;">Sign up</button>
             </form>
             <br>
-            <a class="facebook" href="https://www.facebook.com/">Connect with Facebook</a><br>
-            <a class="Twitter" href="https://www.twitter.com/">Connect with Twitter</a>
+            
+            
         </div>
     `;
 
