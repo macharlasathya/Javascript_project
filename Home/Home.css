@@ -97,7 +97,7 @@ display: flex;
 }
 
 .submenu {
-    display: none;  /* Initially hidden */
+    display: none;  
     margin-left: 40px;
     background-color: #f1f1f1;
     border: 1px solid #ccc;

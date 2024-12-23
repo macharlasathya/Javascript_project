@@ -220,7 +220,7 @@ console.log(Data)
 
 
 Data.forEach(z => {
-    // console.log(z)
+    
     let card = document.createElement("div")
     card.innerHTML = `
     <div  class="CARDS" >
@@ -233,12 +233,11 @@ Data.forEach(z => {
     Dairyproducts.append(card)
 
     card.querySelector(".Adds").addEventListener("click", (e) => {
-        e.stopImmediatePropagation(); // Prevent other click event listeners from firing
-        const allCarts = JSON.parse(localStorage.getItem("cartItems")) || []; // Retrieve cart items from localStorage
-        allCarts.push(z); // Add new item to the cart
-        localStorage.setItem("cartItems", JSON.stringify(allCarts)); // Save updated cart back to localStorage
-    
-        // Display an alert to the user
+        e.stopImmediatePropagation(); 
+        const allCarts = JSON.parse(localStorage.getItem("cartItems")) || []; 
+        allCarts.push(z); 
+        localStorage.setItem("cartItems", JSON.stringify(allCarts)); 
+       
         alert(" Your Item is  added to cart!");
     });
 
