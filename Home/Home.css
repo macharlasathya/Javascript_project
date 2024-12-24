@@ -201,3 +201,12 @@ margin-right: -160px;
   {
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    .headerpart_two-2 {
+        flex-direction: column;
+        position: static;
+    }
+    .socialmedia {
+        gap: 5px;
+    }
+}
