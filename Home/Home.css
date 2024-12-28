@@ -1,6 +1,5 @@
-*
-{
-  font-style: oblique;
+ *{
+font-style: oblique;
 }
 .Main-1
 {
@@ -11,6 +10,10 @@
     margin-left: 70px;
     margin-right: 82px;
 }
+.socialmedia i {
+    color: white;
+}
+
 .socialmedia{
     display: flex;
     gap: 10px;
@@ -21,6 +24,8 @@
 {
     background-color: orange;
     display: flex;
+    justify-content: space-between;
+    gap:10px;
     height: 50px;
     align-items: center;
     gap:50px;
@@ -28,16 +33,25 @@
     width: 90%;
     margin-left: 70px;
 }
-.contact,.formpart
+.formpart
 {
     display: flex;
+}
+.contact
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    
 }
 .Delivery
 {
     display: flex;
-    margin-left: 350px;
+    justify-content: space-between;
+    gap: 50px;
+    
 }
-.headerpart_two
+.headerpart_2
 {
     background-color: white;
     height: 90px;
@@ -68,13 +82,14 @@
     color: orange;
     
 }
+
 .headerpart_two-2
 {
     display: flex;
     gap:10px;
     position: absolute;
     left: 600px;
-    top: 120px;
+    top: 90px;
 }
 .headerpart_two-3
 {
@@ -119,18 +134,19 @@ display: flex;
     background-color: #ddd;
 } 
 
-.headinks
-{
+.headinks {
+    display: flex;
+    gap: 40px; 
     position: absolute;
-    top:220px;
+    top: 220px;
     left: 400px;
 }
-.headinks > a
-{
+.headinks a {
     text-decoration: none;
     font-size: 20px;
-    color: #000;   
+    color: #000;
 }
+
 
  .Products
 {
@@ -162,13 +178,18 @@ display: flex;
     justify-content: center;
     align-items: center;
 }
-.gallery
+.gallery1
 {
     display: flex;
     gap:30px;
     justify-content: center;
     
 }
+.gallery1 img {
+    margin: 10px;
+    border-radius: 20px;
+}
+
 .contactus
 {
     height: 300px;
@@ -179,8 +200,13 @@ display: flex;
 }
 .forms{
 margin-top: -100px;
-margin-right: -160px;
 
+
+}
+.fotterl
+{
+    height: 100px;
+    margin-top: 100px;
 }
 #dairy
 {
@@ -201,12 +227,226 @@ margin-right: -160px;
   {
     cursor: pointer;
   }
-  @media (max-width: 768px) {
-    .headerpart_two-2 {
+
+ 
+
+
+  @media screen and (max-width:1024px)
+  {
+    .Main-1
+    {
+        background-color: gray;
+    }
+    body
+    {
+        font-size: 10px;
+    }
+    .headerpart_one
+    {
+        width: 192%;
+        font-size: 20px;
+    }
+    .headerpart_2
+    {
+        width: 230%;
+        font-size: 20px;
+        display: flex;
+        margin-right: 100px;
+        background-color: pink;
+       
+    }
+    .headerpart_two-2
+    {
+        margin-left: -100px;
+        width: 150%;
+    }
+    .headerpart_2 >img
+    {
+        background-color: pink;
+    }
+    .headerpart_two-3
+    {
+        width: 220%;
+        font-size: 7px; 
+       
+    }
+    .headerpart_two-3
+    {
+        width:230%;
+        background-color: aqua;
+    }
+    .headerpart_two-3 >headinks
+    {
+        position: absolute;
+        top: 10px;
+        left: 500px;
+        font-size: 20vw;
+    }
+    .Bimge>img
+    {
+        width:193%;
+    }
+    #dairy
+    {
+        width: 200%;
+        display: flex;
+        gap:35px;
+        
+    }
+
+    .about {
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;                   
+        justify-content: center;      
+        align-items: center;         
         flex-direction: column;
-        position: static;
+        margin: 0 auto;              
+        margin-top: 10vh; 
+        margin-left: 270px;            
+        width: 80%;                   
+        max-width: 1200px;            
+        min-height: 80vh;             
+        box-sizing: border-box;      
+        position: relative;          
     }
-    .socialmedia {
-        gap: 5px;
+   .gallery1
+    {
+       display: flex;
+       justify-content: center;
+       margin-left: 800px;
+    } 
+    #gallerys {
+        font-size: 2rem;  
+        margin-top: 15px;  
+        
+    } 
+   
+#mores
+{
+    margin-left: 230px;
+}
+.contactus {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center; 
+    height: auto; 
+    gap: 30px; 
+    padding: 20px; 
+    margin: 0 auto; 
+    width: 90%; 
+    max-width: 1200px; 
+    margin-left: 300px;
+}
+
+.contactus div {
+    width: 30%; 
+    max-width: 400px; 
+} 
+
+.contactus span, .contactus p {
+    font-size: 16px; 
+}
+
+.contactus b span {
+    font-size: 22px; 
+}
+.forms
+{
+    margin-top: 50px;
+    margin-left: 350px;
+    display: flex;
+}
+.fotterl{
+    margin-left: 550px;
+}
+}
+
+
+
+
+
+@media screen and (min-width: 468px) and (max-width: 768px)
+{
+    body {
+
+        font-size: 10px;
     }
+    .headerpart_one
+    {
+        width: 200%;
+        font-size: 20px;
+    }
+
+    .headerpart_2
+    {
+        width: 250%;
+        font-size: 20px;
+        display: flex;
+        margin-right: 100px;
+        background-color: palevioletred;
+    }
+
+    .headerpart_two-3
+    {
+        width:250%;
+        background-color: aqua;
+    }
+    .Bimge>img
+    {
+        width:199%;
+    }
+  #dairy
+    {
+        width: 200%;
+        display: flex;
+     }
+    .about {
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;                    
+        justify-content: center;      
+        align-items: center;          
+        flex-direction: column;
+        margin: 0 auto;              
+        margin-top: 10vh; 
+        margin-left: 270px;           
+        width: 80%;                   
+        max-width: 1200px;           
+        min-height: 80vh;            
+        box-sizing: border-box;     
+        position: relative;           
+      }
+     .about>img
+    {
+        max-width: 100%; 
+        height: auto; 
+    }
+    #mores
+    {
+    margin-left: 200px;
+    height: auto; 
+    } 
+    .forms{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 280px;
+        margin-top: 30px;
+    } 
+     .contactus
+    {
+    width: 100%;
+    height: 300px;
+    display: flex;
+   flex-direction: column;
+    justify-content: center;
+    gap: 150px;
+} 
+.fotterl
+{
+    margin-left: 700px;
+}
 }
