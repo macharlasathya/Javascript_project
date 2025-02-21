@@ -70,18 +70,32 @@ font-style: oblique;
    
 }
 
-.cart
-{
-    height: 33px;
-    width: 100px;
-    border: 1px solid gray;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: orange;
-    
+
+.cart {
+    position: relative;
+    display: inline-block;
+    right: -25px;
+    top:12px;
+    width:180px;
 }
+
+.cart-badge {
+    position: absolute;
+    top: -8px; /* Adjust position */
+    right: -10px; /* Adjust position */
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
 
 .headerpart_two-2
 {

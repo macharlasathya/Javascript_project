@@ -15,6 +15,51 @@ more.addEventListener("click", () => {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Fetch cart count from localStorage (ensure it's a number)
+    let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+
+    // Update the cart count in the UI
+    document.getElementById("cartCount").textContent = cartCount;
+});
+
+// Function to update the cart count
+function updateCartCount() {
+    let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+    cartCount++; // Increase count by 1 when an item is added
+
+    localStorage.setItem("cartCount", cartCount); // Store updated count
+    document.getElementById("cartCount").textContent = cartCount; // Update UI
+}
+
+// Add event listener to "Add to Cart" buttons
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("Adds")) {
+        updateCartCount(); // Call the function when Add button is clicked
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let Data = [
     {
         id: 1,
@@ -192,14 +237,7 @@ function renderitems(items) {
     </div>`
 
         Dairyproducts.append(newCard)
-    //     let imageData = document.querySelectorAll(".images")
-    // imageData.forEach(m=>{
-    //     m.addEventListener("click",()=>{
-    //     localStorage.setItem("singleproduct",JSON.stringify(y));
-    //     window.location.href="./singleitem.html";
-    // })
-    // }
-    // )
+    
     }
     )
 
@@ -248,8 +286,6 @@ Data.forEach(z => {
     })
    
 })
-
-
 
 function displayCards(k) {
     Dairyproducts.innerHTML = ""

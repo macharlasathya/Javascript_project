@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <link rel="stylesheet" href="Addtocart.css">
+    <style>
+       
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9966, #ff5e62, #ff4b2b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            width: 380px;
+            text-align: center;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .pay-btn {
+            background: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .pay-btn:hover {
+            background: #ff1a1a;
+            transform: scale(1.05);
+        }
+
+       
+        .fade-out {
+            animation: fadeOut 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-container">
+        <h2>Secure Payment</h2>
+        <h3>Total Amount: ₹<span id="finalAmount">0.00</span></h3>
+        <button class="pay-btn" onclick="confirmPayment()">Proceed to Pay</button>
+    </div>
+
+    <script>
+        document.getElementById("finalAmount").textContent = localStorage.getItem("totalPrice") || "0.00";
+
+        function confirmPayment() {
+            alert("✅ Payment successful! Redirecting...");
+            localStorage.removeItem("cartItems");
+            localStorage.removeItem("totalPrice");
+
+          
+            document.querySelector('.payment-container').classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = "..//Home/Home.html";
+            }, 800); 
+        }
+    </script>
+</body>
+
+</html>
+
+
