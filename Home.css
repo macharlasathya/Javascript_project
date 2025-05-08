@@ -81,8 +81,8 @@ font-style: oblique;
 
 .cart-badge {
     position: absolute;
-    top: -8px; /* Adjust position */
-    right: -10px; /* Adjust position */
+    top: -8px; 
+    right: -10px; 
     background-color: red;
     color: white;
     font-size: 12px;
