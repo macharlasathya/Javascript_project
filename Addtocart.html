@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="Addtocart.css">
-    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="./Addtocart.css">
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="cart">
-        <a href="Addtocart.html" style="text-decoration: none; color: orange; position: relative;">
+        <a href="./Addtocart.html" style="text-decoration: none; color: orange; position: relative;">
             <i class="fa-solid fa-cart-shopping"></i>
             <span id="cartCount" class="cart-badge">0</span>
         </a>
@@ -25,34 +25,30 @@
     <div id="cardContainer"></div>
 
     <script>
-
         const cardContainer = document.getElementById("cardContainer");
         const totalPriceValue = document.getElementById("totalPriceValue");
         const cartCountElement = document.getElementById("cartCount");
 
         let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+        // Calculate total price
         function calculateTotal() {
             let total = 0;
             cartItems.forEach(item => {
                 total += parseFloat(item.price.replace('₹', '')) * item.quantity;
             });
             totalPriceValue.textContent = total.toFixed(2);
-            localStorage.setItem("totalPrice", total.toFixed(2)); 
+            localStorage.setItem("totalPrice", total.toFixed(2));
         }
 
+        // Update cart count
         function updateCartCount() {
             let count = cartItems.reduce((acc, item) => acc + item.quantity, 0);
             cartCountElement.textContent = count;
             localStorage.setItem("cartCount", count);
-
-            
-            const homeCartCount = localStorage.getItem("cartCount");
-            if (homeCartCount) {
-                document.querySelectorAll(".cart-badge").forEach(el => el.textContent = homeCartCount);
-            }
         }
 
+        // Display cart items
         function displayCart() {
             cardContainer.innerHTML = "";
             cartItems.forEach((item, index) => {
@@ -69,7 +65,6 @@
                         <button class="payment" data-index="${index}">Payment</button>
                     </div>
                 `;
-
                 cardContainer.append(card);
             });
 
@@ -93,14 +88,6 @@
                 });
             });
 
-            document.querySelectorAll(".remove").forEach(button => {
-                button.addEventListener("click", function () {
-                    const index = this.getAttribute("data-index");
-                    cartItems.splice(index, 1);
-                    updateCart();
-                });
-            });
-
             document.querySelectorAll(".payment").forEach(button => {
                 button.addEventListener("click", function () {
                     window.location.href = "payment.html";
@@ -108,40 +95,30 @@
             });
         }
 
+        // Update the cart data
         function updateCart() {
-            updateLocalStorage();
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
             calculateTotal();
             updateCartCount();
             displayCart();
         }
 
-        function updateLocalStorage() {
-            localStorage.setItem("cartItems", JSON.stringify(cartItems));
-        }
-
-       
+        // Ensure quantity is always at least 1
         cartItems = cartItems.map(item => ({
             ...item,
             quantity: item.quantity || 1
         }));
 
-      
-        function syncCartCount() {
-            const savedCartCount = localStorage.getItem("cartCount") || "0";
-            cartCountElement.textContent = savedCartCount;
-        }
-
-       
+        // Initial function calls
         calculateTotal();
         updateCartCount();
         displayCart();
-        syncCartCount();
 
-       
     </script>
 </body>
 
 </html>
+
 
 
 

@@ -213,6 +213,14 @@ pro.addEventListener('click', function () {
 console.log(Data)
 
 
+
+let cartCount = 0;
+function updateCartCount() {
+    cartCount++;
+    document.getElementById('cartCount').textContent = cartCount;
+}
+
+
 Data.forEach(z => {
 
     let card = document.createElement("div")
@@ -221,7 +229,9 @@ Data.forEach(z => {
     <img src="${z.image}"  width="260"  class="images"/>
     <h2>${z.category}</h2>
     <h3>${z.price}</h3>
-    <button class="Adds"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add</button>
+   <button class="Adds" onclick="updateCartCount()">
+            <i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add
+        </button>
     </div>`
 
     Dairyproducts.append(card)
