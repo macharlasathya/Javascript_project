@@ -1,4 +1,4 @@
-
+// Keep your original navigation code
 let ABOUTUS = document.getElementById("ABOUTUS");
 ABOUTUS.addEventListener("click", () => {
     window.location.href = "#about";
@@ -13,8 +13,6 @@ let more = document.getElementById("more");
 more.addEventListener("click", () => {
     window.location.href = "#Forms";
 });
-
-
 
 let Data = [
     {
@@ -131,7 +129,7 @@ let Data = [
     },
     {
         id: 17,
-        category: "chitale shrikhand 500gm",
+        category: "chitale shrikhand",
         items: "products",
         price: "₹60",
         image: "https://image1.jdomni.in/product/15/26/8F/Chitale-Shrikhand_1497680697510.png"
@@ -152,19 +150,17 @@ let Data = [
     },
     {
         id: 20,
-        category: "amul panner fresh 200 gm",
+        category: "amul panner",
         items: "products",
         price: "₹100",
-        image: " https://images.jdmagicbox.com/grocery/amul-paneer-fresh-200-gm-107049177-ko1wh.jpg"
+        image: "https://images.jdmagicbox.com/grocery/amul-paneer-fresh-200-gm-107049177-ko1wh.jpg"
     },
     {
-
         id: 21,
         category: "soan papdi",
         items: "products",
         price: "₹180",
         image: "https://image1.jdomni.in/product/29082019/60/B9/AC/01BC2766EE2AAD8482F6EA3606_1567070707087.jpg"
-
     },
     {
         id: 22,
@@ -172,150 +168,326 @@ let Data = [
         items: "products",
         price: "₹150",
         image: "https://image1.jdomni.in/product/25052018/50/9A/B2/71D780354DEB5B64809834D26F_1527237172015.jpg"
-
+    },
+    {
+        id: 23,
+        category: "Bhadusha",
+        items: "products",
+        price: "₹130",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Xk9s_Vrs1uQmDNTL8gbYOhjDuM1vg9e7aA&s"
+    },
+    {
+        id: 24,
+        category: "Rasagulla",
+        items: "products",
+        price: "₹160",
+        image: "https://m.media-amazon.com/images/I/61xZAGE0WEL.jpg"
     }
+];
 
+// Get reference to dairy products container
+let Dairyproducts = document.getElementById("dairy");
 
-]
-
-
-let Dairyproducts = document.getElementById("dairy")
+// FIX 1: Make sure image displays properly by setting fixed height and ensuring the image loads
 function renderitems(items) {
-    Dairyproducts.innerHTML = ""
-    const filetrData = Data.filter(x => x.items === items)
-    filetrData.forEach(y => {
-        let newCard = document.createElement("div")
-        newCard.innerHTML = `<div class="CARDS" >
-    <img src="${y.image}"  width="260"  class="images"/>
-    <h2>${y.category}</h2>
-    <h3>${y.price}</h3>
-    <button class="Adds"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add</button>
-    </div>`
-
-        Dairyproducts.append(newCard)
-
+    if (!Dairyproducts) {
+        console.error("Container with ID 'dairy' not found");
+        return;
     }
-    )
+    
+    Dairyproducts.innerHTML = "";
+    const filetrData = Data.filter(x => x.items === items);
+    
+    if (filetrData.length === 0) {
+        Dairyproducts.innerHTML = "<div class='not-found'>No products found in this category.</div>";
+        return;
+    }
+    
+    filetrData.forEach(y => {
+        let newCard = document.createElement("div");
+        newCard.className = "CARDS";
+        
+        // FIX 2: Use onError handler for images that fail to load
+        newCard.innerHTML = `
+            <div class="image-container">
+                <img src="${y.image}" alt="${y.category}" class="images" 
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/260x180?text=Image+Not+Found';" />
+            </div>
+            <h2>${y.category}</h2>
+            <h3>${y.price}</h3>
+            <button class="Adds"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add</button>
+        `;
 
+        Dairyproducts.appendChild(newCard);
+        
+        // Add event listeners
+        newCard.querySelector(".Adds").addEventListener("click", (e) => {
+            e.stopPropagation();
+            const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
+            allCarts.push(y);
+            localStorage.setItem("cartItems", JSON.stringify(allCarts));
+            updateCartCount();
+            alert("Your Item is added to cart!");
+        });
 
-
+        newCard.querySelector(".images").addEventListener("click", () => {
+            localStorage.setItem("singleproduct", JSON.stringify(y));
+            window.location.href = "../singleitem.html";
+        });
+    });
 }
 
-let sweet1 = document.getElementById("sweetshead")
-sweet1.addEventListener('click', function () {
-    renderitems("sweets")
-})
+// Your category navigation
+let sweet1 = document.getElementById("sweetshead");
+if (sweet1) {
+    sweet1.addEventListener('click', function() {
+        renderitems("sweets");
+    });
+}
 
-let pro = document.getElementById("PRODUCTS")
-pro.addEventListener('click', function () {
-    renderitems("products")
-})
-console.log(Data)
+let pro = document.getElementById("PRODUCTS");
+if (pro) {
+    pro.addEventListener('click', function() {
+        renderitems("products");
+    });
+}
 
+// Add event listener for dairy products if it exists
+let dairy = document.getElementById("dairyhead");
+if (dairy) {
+    dairy.addEventListener('click', function() {
+        renderitems("dairyproducts");
+    });
+}
 
+// Add event listener for all products if it exists
+let allProducts = document.getElementById("allProducts");
+if (allProducts) {
+    allProducts.addEventListener('click', function() {
+        renderAllProducts();
+    });
+}
 
+// Cart count functionality
 let cartCount = 0;
 function updateCartCount() {
     cartCount++;
-    document.getElementById('cartCount').textContent = cartCount;
+    const cartCountElement = document.getElementById('cartCount');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
 }
 
+// FIX 3: Initialize cart count from localStorage
+function initializeCartCount() {
+    const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
+    cartCount = allCarts.length;
+    const cartCountElement = document.getElementById('cartCount');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+}
 
-Data.forEach(z => {
+// Call this function on page load
+window.addEventListener('DOMContentLoaded', function() {
+    initializeCartCount();
+    // Initial loading of all products (if container exists)
+    if (Dairyproducts) {
+        renderAllProducts();
+    }
+});
 
-    let card = document.createElement("div")
-    card.innerHTML = `
-    <div  class="CARDS" >
-    <img src="${z.image}"  width="260"  class="images"/>
-    <h2>${z.category}</h2>
-    <h3>${z.price}</h3>
-   <button class="Adds" onclick="updateCartCount()">
-            <i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add
-        </button>
-    </div>`
+// Function to render all products
+function renderAllProducts() {
+    if (!Dairyproducts) {
+        console.error("Container with ID 'dairy' not found");
+        return;
+    }
+    
+    Dairyproducts.innerHTML = "";
+    
+    Data.forEach(z => {
+        let card = document.createElement("div");
+        card.className = "CARDS";
+        
+        // FIX 4: Use the same improved image handling as above
+        card.innerHTML = `
+            <div class="image-container">
+                <img src="${z.image}" alt="${z.category}" class="images" 
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/260x180?text=Image+Not+Found';" />
+            </div>
+            <h2>${z.category}</h2>
+            <h3>${z.price}</h3>
+            <button class="Adds"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add</button>
+        `;
 
-    Dairyproducts.append(card)
+        Dairyproducts.appendChild(card);
 
-    card.querySelector(".Adds").addEventListener("click", (e) => {
-        e.stopImmediatePropagation();
-        const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
-        allCarts.push(z);
-        localStorage.setItem("cartItems", JSON.stringify(allCarts));
+        card.querySelector(".Adds").addEventListener("click", (e) => {
+            e.stopPropagation();
+            const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
+            allCarts.push(z);
+            localStorage.setItem("cartItems", JSON.stringify(allCarts));
+            updateCartCount();
+            alert("Your Item is added to cart!");
+        });
 
-        alert(" Your Item is  added to cart!");
+        card.querySelector(".images").addEventListener("click", () => {
+            localStorage.setItem("singleproduct", JSON.stringify(z));
+            window.location.href = "../singleitem.html";
+        });
     });
+}
 
-
-    card.querySelector(".images").addEventListener("click", () => {
-        localStorage.setItem("singleproduct", JSON.stringify(z))
-        window.location.href = "../singleitem.html";
-    })
-
-})
-
+// Fix search function
 function displayCards(k) {
-    Dairyproducts.innerHTML = ""
-    k.forEach(M =>                                           //search functionality//
-    {
-        let NewCards = document.createElement("div")
+    if (!Dairyproducts) {
+        console.error("Container with ID 'dairy' not found");
+        return;
+    }
+    
+    Dairyproducts.innerHTML = "";
+    
+    if (k.length === 0) {
+        Dairyproducts.innerHTML = "<div class='not-found'>No products found matching your search.</div>";
+        return;
+    }
+    
+    k.forEach(M => {
+        let NewCards = document.createElement("div");
+        NewCards.className = "CARDS";
+        
+        // FIX 5: Use the same improved image handling here too
         NewCards.innerHTML = `
-    <img src="${M.image}"  width="260"/>
-    <h2>${M.category}</h2>
-     <h3>${M.price}</h3>
-    <button class="Adds"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add</button>`
-        Dairyproducts.append(NewCards)
-    })
-
+            <div class="image-container">
+                <img src="${M.image}" alt="${M.category}" class="images" 
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/260x180?text=Image+Not+Found';" />
+            </div>
+            <h2>${M.category}</h2>
+            <h3>${M.price}</h3>
+            <button class="Adds"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;Add</button>
+        `;
+        
+        Dairyproducts.appendChild(NewCards);
+        
+        // Add event listeners to search results too
+        NewCards.querySelector(".Adds").addEventListener("click", (e) => {
+            e.stopPropagation();
+            const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
+            allCarts.push(M);
+            localStorage.setItem("cartItems", JSON.stringify(allCarts));
+            updateCartCount();
+            alert("Your Item is added to cart!");
+        });
+        
+        NewCards.querySelector(".images").addEventListener("click", () => {
+            localStorage.setItem("singleproduct", JSON.stringify(M));
+            window.location.href = "../singleitem.html";
+        });
+    });
 }
-let searchValue = document.getElementById("searchValue")
-searchValue.addEventListener("keypress", (e) => {
-    e.stopPropagation();
-    if (e.key == "Enter") {
-        let inputValue = searchValue.value.trim();
-        console.log(inputValue)
-        console.log("found")
-        const searchData = Data.filter(n => n.category.toLowerCase().trim() === inputValue.toLowerCase())
 
-        console.log(searchData)
-        displayCards(searchData)
-    }
-    else {
-        console.log("not found")
-    }
+// Search functionality
+let searchValue = document.getElementById("searchValue");
+if (searchValue) {
+    searchValue.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault(); // Prevent form submission if inside a form
+            let inputValue = searchValue.value.trim().toLowerCase();
+            
+            if (inputValue === "") {
+                renderAllProducts();
+                return;
+            }
+            
+            // Use includes() for better search results
+            const searchData = Data.filter(n => 
+                n.category.toLowerCase().includes(inputValue)
+            );
+            
+            console.log("Search results:", searchData);
+            displayCards(searchData);
+        }
+    });
 }
-)
 
+// Mobile Menu Toggle
+let mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Scroll Header Effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.main-header');
+    if (header) {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+});
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Create hamburger menu element
+    const hamburgerMenu = document.createElement('div');
+    hamburgerMenu.className = 'hamburger-menu';
+    hamburgerMenu.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
+    
+    // Find the header part where to insert the hamburger
+    const headerPartTwo = document.querySelector('.headerpart_two-2');
+    if (headerPartTwo) {
+        headerPartTwo.appendChild(hamburgerMenu);
+    }
+    
+    // Find the navigation element
+    const navigation = document.querySelector('.headerpart_two-3');
+    
+    // Toggle menu on hamburger click
+    hamburgerMenu.addEventListener('click', function() {
+        this.classList.toggle('active');
+        if (navigation) {
+            navigation.classList.toggle('active');
+        }
+    });
+    
+    // Close menu when clicking on a menu item or outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = navigation && navigation.contains(event.target);
+        const isClickOnHamburger = hamburgerMenu.contains(event.target);
+        
+        if (!isClickInsideMenu && !isClickOnHamburger && navigation && navigation.classList.contains('active')) {
+            navigation.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+        }
+    });
+    
+    // Close menu when clicking on navigation links
+    const navLinks = document.querySelectorAll('.headinks a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (navigation) {
+                navigation.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992) {
+            // Reset menu state when returning to desktop size
+            if (navigation) {
+                navigation.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        }
+    });
+});

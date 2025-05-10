@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -51,7 +51,7 @@
         </button>
         
 
-                <!-- <a class="facebook" href="https://www.facebook.com/">Connect with Facebook</a>---><br> 
+                
                 
 
                 <button id="lastsingup"
@@ -66,4 +66,65 @@
     <script src="./loginandsinup.js"></script>
 </body>
 
+</html>  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="./loginandsinup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="image-section">
+                <img src="https://images.unsplash.com/photo-1443131307017-4097c8ac7763?dpr=2&auto=format&fit=crop&w=1500&h=1909&q=80&cs=tinysrgb" alt="Welcome Image">
+                <div class="overlay"></div>
+            </div>
+            
+            <div class="form-section">
+                <div class="tabs">
+                    <span id="sing" class="tab active">Sign Up</span>
+                    <span id="login" class="tab">Log In</span>
+                </div>
+                
+                <div id="singup" class="form-content">
+                    <form id="signup-form">
+                        <div class="input-group">
+                            <div class="input-label">Name</div>
+                            <input type="text" id="userName" placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-label">Email</div>
+                            <input type="email" id="userEmail" placeholder="Enter your email">
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-label">Password</div>
+                            <input type="password" id="userPswd" placeholder="Enter your password">
+                        </div>
+                        
+                        <button id="lastsingup" class="primary-btn" type="submit">
+                            Sign Up <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <div class="guest-login">
+                            <a href='./index.html' id="guestLogin" class="secondary-btn">
+                                Continue as Guest
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./loginandsinup.js"></script>
+</body>
 </html>
