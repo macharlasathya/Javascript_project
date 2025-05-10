@@ -1,4 +1,4 @@
-// Keep your original navigation code
+
 let ABOUTUS = document.getElementById("ABOUTUS");
 ABOUTUS.addEventListener("click", () => {
     window.location.href = "#about";
@@ -185,10 +185,9 @@ let Data = [
     }
 ];
 
-// Get reference to dairy products container
+
 let Dairyproducts = document.getElementById("dairy");
 
-// FIX 1: Make sure image displays properly by setting fixed height and ensuring the image loads
 function renderitems(items) {
     if (!Dairyproducts) {
         console.error("Container with ID 'dairy' not found");
@@ -207,7 +206,6 @@ function renderitems(items) {
         let newCard = document.createElement("div");
         newCard.className = "CARDS";
         
-        // FIX 2: Use onError handler for images that fail to load
         newCard.innerHTML = `
             <div class="image-container">
                 <img src="${y.image}" alt="${y.category}" class="images" 
@@ -220,7 +218,7 @@ function renderitems(items) {
 
         Dairyproducts.appendChild(newCard);
         
-        // Add event listeners
+        
         newCard.querySelector(".Adds").addEventListener("click", (e) => {
             e.stopPropagation();
             const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -237,7 +235,7 @@ function renderitems(items) {
     });
 }
 
-// Your category navigation
+
 let sweet1 = document.getElementById("sweetshead");
 if (sweet1) {
     sweet1.addEventListener('click', function() {
@@ -252,7 +250,7 @@ if (pro) {
     });
 }
 
-// Add event listener for dairy products if it exists
+
 let dairy = document.getElementById("dairyhead");
 if (dairy) {
     dairy.addEventListener('click', function() {
@@ -260,7 +258,7 @@ if (dairy) {
     });
 }
 
-// Add event listener for all products if it exists
+
 let allProducts = document.getElementById("allProducts");
 if (allProducts) {
     allProducts.addEventListener('click', function() {
@@ -268,7 +266,7 @@ if (allProducts) {
     });
 }
 
-// Cart count functionality
+
 let cartCount = 0;
 function updateCartCount() {
     cartCount++;
@@ -278,7 +276,6 @@ function updateCartCount() {
     }
 }
 
-// FIX 3: Initialize cart count from localStorage
 function initializeCartCount() {
     const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
     cartCount = allCarts.length;
@@ -288,16 +285,15 @@ function initializeCartCount() {
     }
 }
 
-// Call this function on page load
+
 window.addEventListener('DOMContentLoaded', function() {
     initializeCartCount();
-    // Initial loading of all products (if container exists)
+    
     if (Dairyproducts) {
         renderAllProducts();
     }
 });
 
-// Function to render all products
 function renderAllProducts() {
     if (!Dairyproducts) {
         console.error("Container with ID 'dairy' not found");
@@ -310,7 +306,7 @@ function renderAllProducts() {
         let card = document.createElement("div");
         card.className = "CARDS";
         
-        // FIX 4: Use the same improved image handling as above
+       
         card.innerHTML = `
             <div class="image-container">
                 <img src="${z.image}" alt="${z.category}" class="images" 
@@ -339,7 +335,7 @@ function renderAllProducts() {
     });
 }
 
-// Fix search function
+
 function displayCards(k) {
     if (!Dairyproducts) {
         console.error("Container with ID 'dairy' not found");
@@ -357,7 +353,6 @@ function displayCards(k) {
         let NewCards = document.createElement("div");
         NewCards.className = "CARDS";
         
-        // FIX 5: Use the same improved image handling here too
         NewCards.innerHTML = `
             <div class="image-container">
                 <img src="${M.image}" alt="${M.category}" class="images" 
@@ -370,7 +365,6 @@ function displayCards(k) {
         
         Dairyproducts.appendChild(NewCards);
         
-        // Add event listeners to search results too
         NewCards.querySelector(".Adds").addEventListener("click", (e) => {
             e.stopPropagation();
             const allCarts = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -387,12 +381,12 @@ function displayCards(k) {
     });
 }
 
-// Search functionality
+
 let searchValue = document.getElementById("searchValue");
 if (searchValue) {
     searchValue.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
-            e.preventDefault(); // Prevent form submission if inside a form
+            e.preventDefault(); 
             let inputValue = searchValue.value.trim().toLowerCase();
             
             if (inputValue === "") {
@@ -400,7 +394,6 @@ if (searchValue) {
                 return;
             }
             
-            // Use includes() for better search results
             const searchData = Data.filter(n => 
                 n.category.toLowerCase().includes(inputValue)
             );
@@ -411,7 +404,7 @@ if (searchValue) {
     });
 }
 
-// Mobile Menu Toggle
+
 let mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', function() {
@@ -419,7 +412,6 @@ if (mobileMenuToggle) {
     });
 }
 
-// Scroll Header Effect
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.main-header');
     if (header) {
@@ -430,9 +422,9 @@ window.addEventListener('scroll', function() {
         }
     }
 });
-// Hamburger Menu Functionality
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Create hamburger menu element
+    
     const hamburgerMenu = document.createElement('div');
     hamburgerMenu.className = 'hamburger-menu';
     hamburgerMenu.innerHTML = `
@@ -441,16 +433,16 @@ document.addEventListener('DOMContentLoaded', function() {
         <span></span>
     `;
     
-    // Find the header part where to insert the hamburger
+ 
     const headerPartTwo = document.querySelector('.headerpart_two-2');
     if (headerPartTwo) {
         headerPartTwo.appendChild(hamburgerMenu);
     }
     
-    // Find the navigation element
+    
     const navigation = document.querySelector('.headerpart_two-3');
     
-    // Toggle menu on hamburger click
+    
     hamburgerMenu.addEventListener('click', function() {
         this.classList.toggle('active');
         if (navigation) {
@@ -458,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close menu when clicking on a menu item or outside
+   
     document.addEventListener('click', function(event) {
         const isClickInsideMenu = navigation && navigation.contains(event.target);
         const isClickOnHamburger = hamburgerMenu.contains(event.target);
@@ -469,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close menu when clicking on navigation links
+   
     const navLinks = document.querySelectorAll('.headinks a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -480,10 +472,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Handle window resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 992) {
-            // Reset menu state when returning to desktop size
+           
             if (navigation) {
                 navigation.classList.remove('active');
                 hamburgerMenu.classList.remove('active');

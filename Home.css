@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Header Styles - Top Social Media and Contact Bar */
+
 .Main-1 {
     width: 100%;
     position: fixed;
@@ -68,7 +68,7 @@ body {
     align-items: center;
 }
 
-/* Main Navigation and Search Bar - IMPROVED */
+
 .Main-2 {
     background-color: white;
     padding: 15px 5%;
@@ -78,14 +78,14 @@ body {
 
 .headerpart_2 {
     display: flex;
-    justify-content: flex-start; /* Changed to flex-start to align logo properly */
+    justify-content: flex-start; 
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    gap: 20px; /* Added gap for better spacing */
+    gap: 20px; 
 }
 
-/* Logo styling - IMPROVED */
+
 .logo {
     max-width: 180px;
     height: auto;
@@ -93,16 +93,15 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Search and Cart Container - IMPROVED */
+
 .headerpart_two-2 {
     display: flex;
     align-items: center;
-    flex: 1; /* Takes remaining space */
-    justify-content: flex-end; /* Aligns search and cart to right */
+    flex: 1; 
+    justify-content: flex-end;
     gap: 20px;
 }
 
-/* Search Bar - IMPROVED */
 .formpart {
     position: relative;
     display: flex;
@@ -159,7 +158,7 @@ body {
     justify-content: center;
 }
 
-/* Navigation Links */
+
 .headerpart_two-3 {
     width: 100%;
     margin-top: 15px;
@@ -220,9 +219,9 @@ body {
     width: 80%;
 }
 
-/* Main Content Sections  */
+
 .dairyproducts {
-    margin-top: 220px; /* Adjusted based on header height */
+    margin-top: 220px; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -233,7 +232,7 @@ body {
     width: 100%;
 }
 
-/* Section Headers */
+
 .section-title {
     width: 100%;
     text-align: center;
@@ -242,7 +241,7 @@ body {
     font-size: 1.8rem;
 }
 
-/* About Us Section */
+
 .about {
     display: flex;
     align-items: center;
@@ -290,7 +289,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Gallery Section */
+
 h2 {
     color: #ff8c42;
     position: relative;
@@ -332,7 +331,6 @@ h2::after {
     box-shadow: 0 15px 30px rgba(255, 140, 66, 0.2);
 }
 
-/* More Section */
 #mores img {
     max-width: 100%;
     height: auto;
@@ -340,7 +338,6 @@ h2::after {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact Us Section */
 .contactus {
     display: flex;
     justify-content: space-around;
@@ -376,7 +373,7 @@ h2::after {
     left: 0;
 }
 
-/* Orange Contact Form */
+
 .orange-contact-section {
     background-color: #fff5eb;
     padding: 40px 5%;
@@ -453,7 +450,7 @@ h2::after {
     box-shadow: 0 6px 12px rgba(255, 140, 66, 0.3);
 }
 
-/* Product Cards */
+
 .CARDS {
     border: 1px solid #e0e0e0;
     border-radius: 12px;
@@ -518,7 +515,6 @@ h2::after {
     font-size: 16px;
 }
 
-/* Footer Submit Button */
 .fotterl a p {
     background-color: #ff8c42;
     color: white;
@@ -542,9 +538,7 @@ h2::after {
     box-shadow: 0 6px 12px rgba(255, 140, 66, 0.4);
 }
 
-/* Enhanced Responsive Design with Hamburger Menu */
 
-/* Hamburger Menu Styles - IMPROVED */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -563,7 +557,7 @@ h2::after {
     transition: all 0.3s ease;
 }
 
-/* Hamburger active states */
+
 .hamburger-menu.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -576,12 +570,11 @@ h2::after {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Animation for menu transition */
 .headerpart_two-3 {
     transition: all 0.3s ease;
 }
 
-/* Footer Styles */
+
 .footer {
     background-color: #fff5eb;
     padding: 60px 5% 30px;
@@ -740,7 +733,7 @@ h2::after {
     text-decoration: none;
 }
 
-/* ===== IMPROVED RESPONSIVE BREAKPOINTS ===== */
+
 @media screen and (max-width: 1200px) {
     .gallery1 img {
         width: 280px;
@@ -764,7 +757,6 @@ h2::after {
 }
 
 @media screen and (max-width: 992px) {
-    /* Show hamburger menu and reorganize header */
     .hamburger-menu {
         display: flex;
         margin-left: auto;
@@ -781,7 +773,6 @@ h2::after {
         padding: 12px 5%;
     }
     
-    /* IMPROVED: Better header organization for tablets */
     .headerpart_2 {
         justify-content: space-between;
         flex-wrap: nowrap;
@@ -791,7 +782,6 @@ h2::after {
         max-width: 140px;
     }
     
-    /* IMPROVED: Move search to its own row for better layout */
     .headerpart_two-2 {
         order: 3;
         width: 100%;
@@ -799,7 +789,6 @@ h2::after {
         flex-wrap: wrap;
     }
     
-    /* Hide navigation by default on mobile */
     .headerpart_two-3 {
         display: none;
         position: absolute;
@@ -812,13 +801,11 @@ h2::after {
         margin-top: 0;
     }
     
-    /* When navigation is active/open */
     .headerpart_two-3.active {
         display: block;
         margin-top: 15px !important;
     }
     
-    /* Adjust menu items to stack vertically */
     .headinks {
         flex-direction: column;
         width: 100%;
@@ -832,7 +819,6 @@ h2::after {
         border-bottom: 1px solid #eee;
     }
     
-    /* Additional responsive adjustments */
     .headerpart_one {
         flex-direction: column;
         gap: 15px;
@@ -862,14 +848,13 @@ h2::after {
         height: 160px;
     }
     
-    /* Footer responsiveness */
+  
     .footer-section {
         flex: 1 0 40%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    /* IMPROVED: Better responsive layout for mobile devices */
     .headerpart_2 {
         flex-direction: column;
         align-items: center;
@@ -957,7 +942,7 @@ h2::after {
         max-width: 300px;
     }
     
-    /* Footer responsive for mobile */
+    
     .footer-section {
         flex: 100%;
         text-align: center;
@@ -983,7 +968,7 @@ h2::after {
 }
 
 @media screen and (max-width: 576px) {
-    /* Further mobile refinements */
+  
     .hamburger-menu {
         width: 25px;
         height: 18px;
@@ -1036,7 +1021,7 @@ h2::after {
         padding: 20px 15px;
     }
     
-    /* Footer small screen adjustments */
+   
     .footer {
         padding: 40px 4% 20px;
     }
@@ -1124,7 +1109,7 @@ h2::after {
     }
 }
 
-/* Extra Small Mobile Devices */
+
 @media screen and (max-width: 350px) {
     .logo {
         max-width: 100px;
